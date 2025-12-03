@@ -1,6 +1,35 @@
-float calculateAverage(int arr[], int n) {
+#include <stdio.h>
+
+// Function to calculate average
+double calculateAverage(int arr[], int n) {
     int sum = 0;
-    for(int i=0;i<n;i++) sum += arr[i];
-    return (float)sum / n;
+
+    for (int i = 0; i < n; i++) {
+        sum += arr[i];
+    }
+
+    return (double)sum / n;
 }
-// Write a function named calculateAverage that takes an array of integers as input and returns the average of the numbers.
+
+int main() {
+    int n;
+
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+
+    if (n <= 0) {
+        printf("Array size must be positive.\n");
+        return 0;
+    }
+
+    int arr[n];
+    printf("Enter %d elements:\n", n);
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    double avg = calculateAverage(arr, n);
+    printf("Average of the array: %.2lf\n", avg);
+
+    return 0;
+}

@@ -1,20 +1,29 @@
 #include <stdio.h>
 
 int main() {
-    char a[100], b[100];
-    int i=0, j=0;
+    char str1[100], str2[100];
+    int i = 0, j = 0;
 
-    gets(a);
-    gets(b);
+    printf("Enter first string: ");
+    scanf("%[^\n]", str1);  
 
-    while(a[i] != '\0') i++;
+    getchar(); 
 
-    while(b[j] != '\0')
-        a[i++] = b[j++];
+    printf("Enter second string: ");
+    scanf("%[^\n]", str2);  
 
-    a[i] = '\0';
+    while (str1[i] != '\0') {
+        i++;
+    }
 
-    puts(a);
+    while (str2[j] != '\0') {
+        str1[i] = str2[j];
+        i++;
+        j++;
+    }
+
+    str1[i] = '\0';
+    printf("Concatenated string: %s\n", str1);
+
     return 0;
 }
-// Write a C program to concatenate two strings without using the built-in string functions.
